@@ -1,11 +1,11 @@
-using { cuid } from '@sap/cds/common';
+using {cuid} from '@sap/cds/common';
 
 // aspect customAspect{
 //     location:String;
 //     address:String;
 // }
 
-service bookshop{
+service bookshop {
 
     //unmanged
     // entity Books:cuid {
@@ -16,15 +16,27 @@ service bookshop{
 
 
     //managed
-    entity Books:cuid {
-        title: String;
-        author: Association to Authors;
-    }
-    
-    entity Authors:cuid{
-        name: String;
-        book: Association to many Books on book.author =  $self;
+    entity Books : cuid {
+        title  : String;
+        author : Association to Authors;
     }
 
-    
+    entity Authors : cuid {
+        name : String;
+        book : Association to many Books
+                   on book.author = $self;
+    }
+
+    //Composition
+    entity Orders : cuid {
+        customer : String;
+        Items    : Composition of many OrderItems
+                       on Items.parent = $self;
+    }
+
+    entity OrderItems {
+        key parent   : Association to Orders;
+        key position : Integer;
+            quanity  : Integer;
+    }
 }
