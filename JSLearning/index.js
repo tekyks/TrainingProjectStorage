@@ -105,7 +105,7 @@ this is multiline comments
 //   console.log('Value is neither 5 nor 6');
 // }
 
-//loop
+//loop -
 // for (let i = 0; i <= 5; i++) { //i++ = i + 1
 //   console.log(i);
 // }
