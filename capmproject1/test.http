@@ -1,0 +1,25 @@
+# GET http://localhost:4004/odata/v4/bookshop/Books
+
+# POST http://localhost:4004/odata/v4/bookshop/Books
+# Content-Type: application/json
+
+# {
+#     "title":"Tools of Titans"
+# }
+
+# PUT http://localhost:4004/odata/v4/bookshop/Books(2)
+# Content-Type: application/json
+
+# {
+#     "title": "Make Time"
+# }
+
+
+PATCH http://localhost:4004/odata/v4/bookshop/Books('efbf26e9-c098-4e30-8aac-1d412109c552')
+Content-Type: application/json
+
+{
+    "title": "The 4 hour work week"
+}
+
+# DELETE http://localhost:4004/odata/v4/bookshop/Books(2)
