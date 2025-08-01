@@ -1,5 +1,9 @@
 using org from '../db/schema';
 
+extend org.tekyks.Books with {
+    virtual category: String;
+}
+
 //@impl:'srv/main2.js'
 service bookshop {
     entity Books   as projection on org.tekyks.Books;

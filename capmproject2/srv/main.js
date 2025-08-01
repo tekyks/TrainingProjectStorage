@@ -31,10 +31,14 @@ module.exports = cds.service.impl(function(){
     });
 
     const doModification = function(data){
-        for(let i = 0; i<data.length; i++){
-            data[i].title = data[i].title + "!!!!!!!!!!!!!";
-            data[i].category = 'new category field';
-        }
+        return data.map(data => {
+            //data.title += "!!!!!!!!!";
+            if(data.title.toLowerCase().includes("work")){
+                data.category = "Business Book";
+            }else{
+                data.category = "Fiction Book";
+            }          
+        })
     };
 
 
