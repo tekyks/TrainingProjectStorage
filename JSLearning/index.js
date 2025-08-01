@@ -123,3 +123,57 @@ this is multiline comments
 //   }
 //   console.log(i);
 // }
+
+let numbers = [1, 2, 3, 4, 5, 6];
+
+//use case1 - convert this array into double of these numbers [2,4,6,8,10,12]
+
+// let numbers2 = [];
+// for (let i = 0; i < numbers.length; i++) {
+//   numbers2[i] = numbers[i] * 2;
+// }
+// console.log(numbers2);
+
+// //JS array --> map function
+// let numbers3 = numbers.map((num) => {
+//   num = num + 1;
+//   return num * 2;
+// });
+// let numbers4 = numbers.map(function (num) {
+//   num = num + 1;
+//   return num * 2;
+// });
+// console.log(numbers3);
+// console.log(numbers4);
+
+// //JS filter
+// //Use case - find out all the even numbers
+// let evenNumbers = numbers.filter((num) => num % 2 === 0);
+// console.log(evenNumbers);
+
+function apiFetchUser() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      //resolve({ name: 'Krishna', id: 'tekyks' });
+      reject('Call got failed');
+    }, 5000);
+  });
+}
+
+// apiFetchUser()
+//   .then((user) => console.log('user name: ' + user.name))
+//   .catch((error) => console.log(error));
+
+//async-await
+async function getUser() {
+  try {
+    let user = await apiFetchUser();
+    console.log('user name: ' + user.name);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getUser();
+
+console.log('End message');
