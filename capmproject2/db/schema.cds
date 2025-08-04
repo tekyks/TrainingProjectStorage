@@ -5,6 +5,8 @@ using {cuid} from '@sap/cds/common';
 //managed
 entity Books : cuid {
     title  : String;
+    stock: Integer;
+    price: Integer;
     author : Association to Authors;
 }
 

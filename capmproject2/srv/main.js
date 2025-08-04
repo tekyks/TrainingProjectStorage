@@ -48,6 +48,43 @@ module.exports = cds.service.impl(function(){
         doModification(data);
     });
 
+    //unbound function
+    this.on('getAllBooksTitle',function(){
+        return "List of Titles";
+    });
+
+    //decalre Books variable
+    const Books = cds.entities('bookshop')['Books'];
+    //1- unbound function
+    this.on('totalStock',async function(){
+        //get the total stock by fetching all the books 
+        //stock field and adding all
+        //1- get all the books
+        //2- get only stock field
+        //3- do the summation of all the stocks
+        //4- (optional) give alias name to computed column
+
+        const result = await SELECT.one.columns('sum(stock) as totalstock').from(Books);
+
+        return result.totalstock;
+
+    });
+
+
+    //2- bound function
+
+
+
+    //3- Unbound Action
+
+
+
+    //4- Bound Action
+
+
+
+
+
 
 
     // this.after('each', 'Books', function(data,req){
