@@ -2,7 +2,7 @@ const cds = require('@sap/cds');
 
 class bookshop extends cds.ApplicationService {
   init() {
-    //all the logic will come here
+    //all the logic will come here -->
 
     this.on('READ', 'Books', function (req, next) {
       console.log('I am inside Book Read function');
