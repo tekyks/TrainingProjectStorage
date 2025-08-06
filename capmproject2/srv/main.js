@@ -41,9 +41,9 @@ class bookshop extends cds.ApplicationService {
     });
 
     //unbound function
-    this.on('getAllBooksTitle', function () {
-      return 'List of Titles';
-    });
+    // this.on('getAllBooksTitle', function () {
+    //   return 'List of Titles';
+    // });
 
     //decalre Books variable
     const Books = cds.entities('bookshop')['Books'];
@@ -105,6 +105,37 @@ class bookshop extends cds.ApplicationService {
 
       return await SELECT.from(Books, id);
     });
+
+
+    this.on('getAllBooksTitle', function (req, next) {
+      //logic for my validation
+      //return req.error('Validation Failed');
+      //return req.error(410,'Validation Failed');
+      return req.error(410);
+    });
+
+
+    //error handling
+    this.on('error', function (err) {
+      switch (err.code) {
+        case 401:
+          err.message = 'Access Issue, pls contact support team ' + err.message ;
+          break;
+        case 404:
+          err.message = 'Requested data not found, pls contact support team ' + err.message ;
+          break;
+        case 410:
+          err.message = 'Validation Failed, pls check your data';
+          break;
+        default:
+          err.message = 'Something went wrong, please try after some time! ' + err.message;
+      }
+
+    });
+
+
+
+
 
     // this.after('each', 'Books', function(data,req){
     //     console.log("I am inside after impl of READ");
