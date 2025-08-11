@@ -17,11 +17,23 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/sales-order/",
+        "uri": "odata/v4/sales-order/",
         "type": "OData",
         "settings": {
           "annotations": [],
           "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "soapp-display": {
+          "semanticObject": "soapp",
+          "action": "display",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
       }
     }
@@ -134,11 +146,7 @@
               "editableHeaderContent": false,
               "contextPath": "/SalesOrderHeader",
               "navigation": {
-                "SOItems": {
-                  "detail": {
-                    "route": "SalesOrderItemsObjectPage"
-                  }
-                }
+                "SOItems": {}
               }
             }
           }
@@ -160,5 +168,9 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "zcapmfinalproject.service"
   }
 }

@@ -1,4 +1,6 @@
 using SalesOrderService as service from '../../srv/so_srv';
+using from '../../db/so';
+
 annotate service.SalesOrderHeader with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
@@ -37,6 +39,12 @@ annotate service.SalesOrderHeader with @(
             Label : 'General Information',
             Target : '@UI.FieldGroup#GeneratedGroup',
         },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Sales Order Items',
+            ID : 'SalesOrderItems',
+            Target : 'SOItems/@UI.LineItem#SalesOrderItems',
+        },
     ],
     UI.LineItem : [
         {
@@ -65,5 +73,35 @@ annotate service.SalesOrderHeader with @(
             Value : SalesOrderTotal,
         },
     ],
+);
+
+annotate service.SalesOrderItems with @(
+    UI.LineItem #SalesOrderItems : [
+        {
+            $Type : 'UI.DataField',
+            Value : ProductId,
+            Label : 'ProductId',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : ProductName,
+            Label : 'ProductName',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Quantity,
+            Label : 'Quantity',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : UnitPrice,
+            Label : 'UnitPrice',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : UnitTotal,
+            Label : 'UnitTotal',
+        },
+    ]
 );
 
