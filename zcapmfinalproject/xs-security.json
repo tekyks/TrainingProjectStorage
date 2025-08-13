@@ -1,5 +1,19 @@
 {
-  "scopes": [],
+  "xsappname":"zcapmfinalproject",
+  "scopes": [
+    {
+      "name":"$XSAPPNAME.admin",
+      "description":"admin"
+    }
+  ],
   "attributes": [],
-  "role-templates": []
+  "role-templates": [
+    {
+      "name":"Admin",
+      "description":"Administrator role",
+      "scope-references":[
+        "$XSAPPNAME.admin"
+      ]
+    }
+  ]
 }
