@@ -26,7 +26,17 @@
     "requires": {
       "Northwind": {
         "kind": "odata",
-        "model": "srv/external/Northwind"
+        "model": "srv/external/Northwind",
+        "[testing]":{
+          "credentials":{
+            "url":"https://services.odata.org/Experimental/OData/OData.svc"
+          }
+        },
+        "[production]":{
+          "credentials":{
+            "destination":"Northwind_dest"
+          }
+        }
       }
     }
   }
