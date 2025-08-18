@@ -1,0 +1,13 @@
+<mvc:View controllerName="ui5firstproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+        <Input id="idInput" placeholder="Enter Your name" width="50%" />
+        <Button id="idSubmit" text="Submit" press="onClickSubmit"/>
+
+
+        <!-- <Button id="id1" text="Say Hello" press="onClickHelloButton"/>
+        <Text id="idText1" text = "This is test control"/> -->
+    </Page>
+</mvc:View>
