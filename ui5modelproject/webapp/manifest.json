@@ -1,7 +1,7 @@
 {
   "_version": "1.76.0",
   "sap.app": {
-    "id": "ui5firstproject",
+    "id": "techyks.ui5modelproject",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.18.5",
-      "toolsId": "dde68393-e627-4a2d-b53b-584e002c75c1"
+      "toolsId": "5d367e4c-121b-4f74-8c0a-b7bec75c9a09"
     }
   },
   "sap.ui": {
@@ -49,7 +49,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "ui5firstproject.i18n.i18n"
+          "bundleName": "techyks.ui5modelproject.i18n.i18n"
         }
       }
     },
@@ -68,9 +68,9 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "ui5firstproject.view",
+        "path": "techyks.ui5modelproject.view",
         "async": true,
-        "viewPath": "ui5firstproject.view"
+        "viewPath": "techyks.ui5modelproject.view"
       },
       "routes": [
         {
@@ -89,7 +89,7 @@
       }
     },
     "rootView": {
-      "viewName": "ui5firstproject.view.App",
+      "viewName": "techyks.ui5modelproject.view.App",
       "type": "XML",
       "id": "App",
       "async": true

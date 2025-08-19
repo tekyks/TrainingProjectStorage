@@ -1,0 +1,15 @@
+<mvc:View controllerName="techyks.ui5modelproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <Text text="------------- Employee Data --------------------" />
+        <VBox>
+            <Input placeholder="Name" value="{/employee/name}" />
+            <Input placeholder="Emp ID" value="{/employee/id}" />
+            <Input placeholder="Department" value="{/employee/department}" />
+            <Input placeholder="Designation" value="{/employee/designation}" />
+
+
+        </VBox>
+    </Page>
+</mvc:View>

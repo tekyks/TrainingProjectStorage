@@ -3,9 +3,25 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
 
-        <Input id="idInput" placeholder="Enter Your name" width="50%" />
-        <Button id="idSubmit" text="Submit" press="onClickSubmit"/>
+        <VBox id="idVBox">
+            <Input id="idInput" placeholder="Enter Your name" width="50%" />
+            
+            <HBox id="idHBox">
+                <Button id="idSubmit" text="Submit" press="onClickSubmit"></Button>
+                <!-- <Button id="idSubmit2" text="Cancel" press="onClickSubmit"/> -->
+            </HBox> 
+            
+        </VBox>
 
+        <VBox>
+            <Label text="Enter your School Name" />
+            <Input value="DPS" editable="false" enabled="true"/>
+            <Label text="Select Date" labelFor="DP1"/>
+            <DatePicker
+                placeholder="Enter Date"
+                change="handleChange"
+                class="sapUiSmallMarginBottom"/>
+        </VBox>
 
         <!-- <Button id="id1" text="Say Hello" press="onClickHelloButton"/>
         <Text id="idText1" text = "This is test control"/> -->
