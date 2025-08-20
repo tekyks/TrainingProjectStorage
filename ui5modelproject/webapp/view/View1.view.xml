@@ -2,14 +2,50 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-    <Text text="------------- Employee Data --------------------" />
+    <Text text="------------- Employee Data (Property Binding) : Default --------------------" />
         <VBox>
             <Input placeholder="Name" value="{/employee/name}" />
             <Input placeholder="Emp ID" value="{/employee/id}" />
             <Input placeholder="Department" value="{/employee/department}" />
             <Input placeholder="Designation" value="{/employee/designation}" />
-
-
+            <Input placeholder="Zip Code" value="{/employee/address/zipcode}" />
+            <Input placeholder="City" value="{/employee/address/city}" />
+        </VBox>
+        <Text text="------------- Student Data (Property Binding) : named --------------------" />
+        <VBox>
+            <Input placeholder="Name" value="{studentmodel>/student/name}" />
+            <Input placeholder="Student ID" value="{studentmodel>/student/id}" />
+            <Input placeholder="Class" value="{studentmodel>/student/class}" />
+            <Input placeholder="Section" value="{studentmodel>/student/section}" />
+        </VBox>
+        <Text text="------------- Employee Data (Element Binding) : Default --------------------" />
+        <VBox binding="{/employee}">
+            <Input placeholder="Name" value="{name}" />
+            <Input placeholder="Emp ID" value="{id}" />
+            <Input placeholder="Department" value="{department}" />
+            <Input placeholder="Designation" value="{designation}" />
+            <Input placeholder="Zip Code" value="{address/zipcode}" />
+            <Input placeholder="City" value="{address/city}" />
+        </VBox>
+        <Text text="------------- Student Data (Element Binding) : named--------------------" />
+        <VBox binding="{studentmodel>/student}">
+            <Input placeholder="Name" value="{studentmodel>name}" />
+            <Input placeholder="Student ID" value="{studentmodel>id}" />
+            <Input placeholder="Class" value="{studentmodel>class}" />
+            <Input placeholder="Section" value="{studentmodel>section}" />
+        </VBox>
+        <Text text="------------- Employee List (Aggregation Binding) : named--------------------" />
+        <VBox>
+            <List headerText="Employee List" items="{emplistmodel>/employees}">
+                <items>
+                    <StandardListItem title="{emplistmodel>name}" info="{= ${emplistmodel>isperm} === 'X' ? 'Permanent' : 'Contractor' }"></StandardListItem>
+                </items>
+            </List>
+        </VBox>
+        <Text text="------------- One way Vs Two Way Binding--------------------" />
+        <VBox>
+           <Input placeholder="Name" value="{/employee/name}" />
+           <Input placeholder="Name" value="{/employee/name}" editable="false"/>
         </VBox>
     </Page>
 </mvc:View>

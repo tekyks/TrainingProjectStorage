@@ -1,0 +1,24 @@
+{
+    "employees": [
+        {
+            "id": 1001,
+            "name": "John",
+            "isperm": "X"
+        },
+        {
+            "id": 1002,
+            "name": "Joule",
+            "isperm": ""
+        },
+        {
+            "id": 1003,
+            "name": "Robert",
+            "isperm": "X"
+        },
+        {
+            "id": 1004,
+            "name": "Tom",
+            "isperm": ""
+        }
+    ]
+}
