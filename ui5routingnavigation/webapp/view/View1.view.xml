@@ -1,0 +1,10 @@
+<mvc:View controllerName="ui5routingnavigation.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <VBox>
+    <Text text = "This is First View" />
+    <Button text="Go to View2" press="onPressGotoView2"/>
+    </VBox>
+    </Page>
+</mvc:View>

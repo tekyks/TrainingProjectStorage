@@ -36,7 +36,7 @@
         </VBox>
         <Text text="------------- Employee List (Aggregation Binding) : named--------------------" />
         <VBox>
-            <List headerText="Employee List" items="{emplistmodel>/employees}">
+            <List headerText="{i18n>emplist}" items="{emplistmodel>/employees}">
                 <items>
                     <StandardListItem title="{emplistmodel>name}" info="{= ${emplistmodel>isperm} === 'X' ? 'Permanent' : 'Contractor' }"></StandardListItem>
                 </items>
@@ -44,8 +44,12 @@
         </VBox>
         <Text text="------------- One way Vs Two Way Binding--------------------" />
         <VBox>
-           <Input placeholder="Name" value="{/employee/name}" />
-           <Input placeholder="Name" value="{/employee/name}" editable="false"/>
+           <Input placeholder="{i18n>name}" value="{/employee/name}" />
+           <Input placeholder="{i18n>name}" value="{/employee/name}" editable="false"/>
+        </VBox>
+        <Text text="------------- Resource Model (i18n)--------------------" />
+        <VBox>
+           <Input value="{i18n>messagetext}" editable="false"/>
         </VBox>
     </Page>
 </mvc:View>
