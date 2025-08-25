@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Dialog title="Dialog Fragment">
+        <Input id="idFragDialog" placeholder="This is coming from Dialog Fragment"/>
+        <Button text="Submit" press="onPressDialogSubmit" />
+        <Button text="Close" press="onPressDialogClose" /> 
+    </Dialog>
+</core:FragmentDefinition>

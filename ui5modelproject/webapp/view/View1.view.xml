@@ -38,7 +38,9 @@
         <VBox>
             <List headerText="{i18n>emplist}" items="{emplistmodel>/employees}">
                 <items>
-                    <StandardListItem title="{emplistmodel>name}" info="{= ${emplistmodel>isperm} === 'X' ? 'Permanent' : 'Contractor' }"></StandardListItem>
+                    <!-- <StandardListItem title="{emplistmodel>name}" info="{= ${emplistmodel>isperm} === 'X' ? 'Permanent' : 'Contractor' }"></StandardListItem> -->
+                    <!-- <StandardListItem title="{emplistmodel>name}" info="{path: 'emplistmodel>salary', formatter:'.getCTC'}"></StandardListItem> -->
+                    <StandardListItem title="{emplistmodel>name}" info="{path: 'emplistmodel>salary', formatter:'.fomatter.getCTC'}"></StandardListItem>
                 </items>
             </List>
         </VBox>

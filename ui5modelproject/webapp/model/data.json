@@ -3,22 +3,26 @@
         {
             "id": 1001,
             "name": "John",
-            "isperm": "X"
+            "isperm": "X",
+            "salary":50000
         },
         {
             "id": 1002,
             "name": "Joule",
-            "isperm": ""
+            "isperm": "",
+            "salary":80000
         },
         {
             "id": 1003,
             "name": "Robert",
-            "isperm": "X"
+            "isperm": "X",
+            "salary":70000
         },
         {
             "id": 1004,
             "name": "Tom",
-            "isperm": ""
+            "isperm": "",
+            "salary":30000
         }
     ]
 }

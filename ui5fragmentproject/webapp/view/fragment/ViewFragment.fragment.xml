@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Input id="idFragView" placeholder="This is coming from View Fragment"/>
+    <Button text="Fragment Button" press="onClickFragmentButton" />
+</core:FragmentDefinition>
