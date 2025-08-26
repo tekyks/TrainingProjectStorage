@@ -1,0 +1,21 @@
+<mvc:View controllerName="ui5dialogsandvalidations.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <VBox>
+        <Text text="**************** MessageBox Part *********************"/>
+            <Button text="Show Information Message" press="onShowInfo"/>
+            <Button text="Show Warning Message" press="onShowWarning"/>
+            <Button text="Show Success Message" press="onShowSuccess"/>
+            <Button text="Show Error Message" press="onShowError"/>
+        </VBox>
+
+        <VBox>
+        <Text text="**************** Validation Part *********************"/>
+            <Input id="inputName" placeholder="Enter your name" liveChange="onValidate" valueStateText="Name can't be blank"/>
+            <Input id="inputMobile" placeholder="Enter your Mobile no" liveChange="onValidate" valueStateText="Mobile No is invalid"/>
+            <Input id="inputCTC" placeholder="Enter your CTC" liveChange="onValidate" valueStateText="Pls use numeric data"/>
+            <Input id="inputComment" placeholder="Enter your comment" liveChange="onValidate" valueStateText="Pls enter min 6 charcters"/>
+        </VBox>
+    </Page>
+</mvc:View>

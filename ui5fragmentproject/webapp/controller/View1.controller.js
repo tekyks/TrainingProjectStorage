@@ -7,20 +7,29 @@ sap.ui.define([
         onInit() {
         },
 
-        onClickFragmentButton:function(oEvent){
+        onClickFragmentButton: function (oEvent) {
             sap.m.MessageToast.show("Fragment button clicked!");
         },
 
-        callDialogFragment:function(oEvent){
+        callDialogFragment: function (oEvent) {
             //this will load our dialog fragment
-            this._oDialog = sap.ui.xmlfragment(this.getView().getId(), "ui5fragmentproject.view.fragment.DialogFragment", this);
-            //lets attach fragment to our view
-            this.getView().addDependent(this._oDialog);
+            if (!this._oDialog) { //lazy loading
+                this._oDialog = sap.ui.xmlfragment(this.getView().getId(), "ui5fragmentproject.view.fragment.DialogFragment", this);
+                //lets attach fragment to our view
+                this.getView().addDependent(this._oDialog);
+            }
             this._oDialog.open();
         },
 
-        onPressDialogClose: function(){
+        onPressDialogSubmit: function(){
+            let oDialogInputValue = this.byId("idFragDialog").getValue();
+            sap.m.MessageToast.show("Input Data = "+oDialogInputValue);
+            this._oDialog.close();
+        },
+
+        onPressDialogClose: function () {
             this._oDialog.close();
         }
     });
 });
+
