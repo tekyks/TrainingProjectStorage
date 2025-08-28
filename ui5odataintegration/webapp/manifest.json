@@ -1,0 +1,122 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "ui5odataintegration",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.18.5",
+      "toolsId": "f8154926-1409-4a1e-a649-f6dd0f29d806"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/v2/northwind/northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.139.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5odataintegration.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+      
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5odataintegration.view",
+        "async": true,
+        "viewPath": "ui5odataintegration.view"
+      },
+      "routes": [
+        {
+          "name": "RouteProductList",
+          "pattern": "",
+          "target": "TargetProductList"
+        },
+        {
+          "name": "RouteProductDetails",
+          "pattern": "Detail/{PrdId}",
+          "target": "TargetProductDetails"
+        }
+      ],
+      "targets": {
+        "TargetProductList": {
+          "id": "ProductList",
+          "name": "ProductList"
+        },
+        "TargetProductDetails": {
+          "id": "ProductDetails",
+          "name": "ProductDetails"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "ui5odataintegration.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

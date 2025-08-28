@@ -1,0 +1,12 @@
+<mvc:View controllerName="ui5odataintegration.controller.ProductDetails"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page title="Product Details">
+        <f:SimpleForm >
+            <Label text="Product Id" />
+            <Input value="{jProductDetails>/ProductID}" editable="false"/>
+            <Label text="Product Name" />
+            <Input value="{jProductDetails>/ProductName}" editable="false" />
+        </f:SimpleForm>
+    </Page>
+</mvc:View>
